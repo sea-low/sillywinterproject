@@ -1,7 +1,13 @@
-import { useState } from 'react'
-import Challenger from './pages/challenger'
-import Quiz from './pages/quiz';
-import IsItOverHenry from './pages/stinky';
+import { useState } from "react";
+import {
+  BrowserRouter as 
+  Router,
+  Routes,
+  Route,
+} from "react-router-dom";
+import Challenger from './pages/challenger.jsx'
+import Quiz from './pages/quiz.jsx';
+import IsItOverHenry from './pages/stinky.jsx';
 // import { useNavigate } from "react-router-dom";
 
 function App() {
@@ -27,17 +33,20 @@ function App() {
     console.log(formData.name)
   }
 
+  // work on quiz portion
+  // attempt to put the functions for quiz portion into this page
+  // see if you can navigate with the buttons on challenger and on quiz page
+  // don't cry lol
+
 
   return (
-    <>
-    <Challenger onSubmit={handleClick()} onChange={formDataHandler} formData={formData} onClick={addNew}/>
-    <Quiz />
-    <IsItOverHenry enteredName={formData.name}/>
-    <a href="results.jsx"></a>
-    <div>
-      
-    </div>
-    </>
+    <Router>
+      <Routes>
+        <Route exact path="/challenger" element={<Challenger onSubmit={handleClick()} onChange={formDataHandler} formData={formData} onClick={addNew}/>}/>
+        <Route exact path="/quiz" element={<Quiz/>}/>
+        <Route exact path="/stinky" element={<IsItOverHenry/>}/>
+      </Routes>
+    </Router>
   )
 }
 

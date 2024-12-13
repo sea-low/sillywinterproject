@@ -1,4 +1,5 @@
-const Challenger = ({onSubmit, formData, onChange, onClick, visible}) => {
+// import { useState } from "react";
+const Challenger = ({onSubmit, formData, onChange, onClick}) => {
 
   return (
     <div>
