@@ -1,5 +1,6 @@
 // import { useState } from "react";
-const Challenger = ({onSubmit, formData, onChange, onClick}) => {
+import { Link } from "react-router-dom"
+const Challenger = ({onSubmit, formData, onChange, location, onClick}) => {
 
   return (
     <div>
@@ -9,7 +10,9 @@ const Challenger = ({onSubmit, formData, onChange, onClick}) => {
     My name is: <input name="name" value={formData.name} onChange={onChange}/>
     </div>
     <div>
-      <button type="submit" onClick={onClick}>this is correct</button>
+      <button type="button" onClick={onClick}>
+      <Link type="submit" to={location} >this is correct</Link>
+      </button>
     </div>
   </form>
   </div>

@@ -1,11 +1,12 @@
-const Question = ({ qbody, qnum, onChange }) => {
+function Question ({ qbody, qnum}) {
   return (
     <div>
       <h1>Question {qnum}</h1>
       <div>{qbody}</div>
-      <button type="button" onChange={onChange}>agree</button>
-      <button type="button" onChange={onChange}>neutral</button>
-      <button type="button" onChange={onChange}>disagree</button>
+      
+      {/* <button type="button" onClick={onClick}>agree</button>
+      <button type="button" onClick={onClick}>neutral</button>
+      <button type="button" onClick={onClick}>disagree</button> */}
     </div>
   )
 }

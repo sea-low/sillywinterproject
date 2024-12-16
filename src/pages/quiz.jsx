@@ -1,24 +1,15 @@
-import Question from "../components/question";
-// import pic1 from "/pics/pic1"
-// import pic2 from "/pics/pic2"
-// import pic3 from "/pics/pic3"
+import Question from "../components/question"
+import RadioButtons from "../components/radio"
+import { Link } from "react-router-dom"
 
-function Quiz({onSubmit, onChange}) {
-    const testbank = [
-        "Two state solution",
-        "I am like",
-        "I'm a pretty chill dude",
-        "I have never farted in public",
-        "I have seen more than one boob in person",
-        "Watching ads makes me happy",
-        "White people",
-        "Ass and titties",
-        "I wash my b***hole daily",
-        "Cats",
-        // pic1,
-        // pic2,
-        // pic3,
-      ]
+function Quiz({q, start, onClick, btntext, location, onChange}) {
+    return (
+        <>
+        <Question qbody={q[start]} qnum={start + 1} onChange={onChange}/>
+        <RadioButtons/>
+        <button type="button" onClick={onClick}><Link to={location}>{btntext}</Link></button>
+        </>
+    )
     
     // this also exceeded max call stack size: 
 
