@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-function IsItOverHenry ({enteredName, onClick}){
+function IsItOverHenry ({enteredName, onClick, agt}){
     return (
         <>
         <div>
@@ -7,7 +7,7 @@ function IsItOverHenry ({enteredName, onClick}){
         </div>
         <div>
             <h1>
-            {enteredName} is 100% stinky!
+            {enteredName} {agt}
             </h1>
         </div>
         </>
