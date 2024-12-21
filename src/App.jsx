@@ -35,6 +35,108 @@ function App() {
       name: formData.name,
     }
   }
+  let testbank = [
+    "Two state solution",
+    "Poopoo peepee",
+    "I'm a pretty chill dude",
+    "Blaming someone else for your fart is socially acceptable",
+    "I have seen more than one boob in person",
+    "I enjoy watching ads",
+    "White people",
+    "Ass and titties",
+    "It's okay to skip brushing if you are like super tired",
+    "Cats.",
+    "Racism.",
+    "Crime is okay if you love someone",
+    "It's them gat dang kids again",
+    "Your mother.",
+    "Tomato is actually pronounced 'tomato'",
+    "If you find a money on the ground and there's no one around its fair game",
+    "Throwing bread at solar salesmen like they are hungry hungry geese",
+    "I get along well with others",
+    "Banana bread bro?",
+    "Drunk cigs dont count",
+    "I have never told a lie ever",
+    "Ugly people deserve less than non ugly people",
+    "Pineapple on pizza is okay",
+    "Ketchup is spicy",
+    "I like to dance",
+    "I would hold the homie's hand",
+    "I am an organized person",
+    "Dogs",
+    "Birds are not a real pet",
+    "Feet are gross"
+
+    // pic1,
+    // pic2,
+    // pic3,
+  ]
+  // let testbank = [];
+
+  function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+  }
+
+
+
+  // this gens a new test but only shows the first question??? also array length doesn't appear to be correct; just shuffles :/
+
+  // function testGen() {
+  //   let i = 0
+  //   while(i < 10) {
+  //     const indexGen = Math.floor(Math.random() * potentialQ.length)
+  //     const currQ = potentialQ[indexGen]
+  //     testbank.push(currQ)
+  //     potentialQ.splice(indexGen, 1)
+  //     i+=1
+  //   }
+  // }
+
+  //randomized numarr but there are repeats (bad)
+  // const numArr = Array.from({length: 10}, () => Math.floor(Math.random() * potentialQ.length))
+
+  //
+    // array of [...potneitalQ.length]
+  // hack away numbers until it is the desired size
+  // populate testbank with indexes given in numArr
+  // UPDATE: not working out now but maybe come back to this if I'm still struggle bussing it
+
+//   const numArr = Array.from({length: potentialQ.length}, (_, i) => i + 1)
+
+//   const shrinker = (ar) => {
+//   while(ar > 10) {
+//     let randIndex = Math.floor(Math.random() * ar.length)
+//     ar.splice(randIndex, 1)
+//   }
+// }
+// shrinker(numArr)
+
+
+// newTest() correctly makes a new randomized array but after q3 the array disappears?
+// shows no more questions
+// also it's for some reason called twice?
+
+// function newTest() {
+//    for(let i = 0; i < 10; i++) {
+//     const indexGen = Math.floor(Math.random() * potentialQ.length)
+//     const currQ = potentialQ[indexGen]
+//     testbank.push(currQ)
+//     potentialQ.splice(indexGen, 1)
+//   }
+//   return testbank
+// }
+
+  //  for(let i = 0; i < 10; i++) {
+  //   const indexGen = Math.floor(Math.random() * potentialQ.length)
+  //   const currQ = potentialQ[indexGen]
+  //   testbank.push(currQ)
+  //   potentialQ.splice(indexGen, 1)
+  // }
+
+  
 
   function start() {
     if(formData.name.length < 3) {
@@ -42,50 +144,27 @@ function App() {
       setLoc("/challenger")
     }
     else {
-      setLoc("/quiz")
       console.log(testbank)
+      shuffleArray(testbank)
+      setLoc("/quiz")
     }
   }
 
   // this is for selecting the questions
-  let potentialQ = [
-    "Two state solution",
-    "Poopoo peepee",
-    "I'm a pretty chill dude",
-    "Blaming someone else for your fart",
-    "I have seen more than one boob in person",
-    "Watching ads",
-    "White people",
-    "Ass and titties",
-    "It's okay to skip brushing if you are like super tired",
-    "Cats.",
-    "Racism.",
-    "A big ole steamer",
-    "It's them gat dang kids again",
-    "Your mother.",
-    "Tomato is actually pronounced 'tomato'",
-    "Becoming aware that you are currently breathing",
-    "Egging solar salesmen",
-    "I get along well with others",
-    "Banana bread bro?",
-    "Drunk cigs dont count"
 
-    // pic1,
-    // pic2,
-    // pic3,
-  ]
-  const testbank = [];
+
 
   // function addQ() {
   //   testbank.push(currQ)
   //   potentialQ.slice(indexGen, 1)
   // }
-  for(let i = 0; i < 10; i++) {
-    const indexGen = Math.floor(Math.random() * potentialQ.length)
-    const currQ = potentialQ[indexGen]
-    testbank.push(currQ)
-    potentialQ.splice(indexGen, 1)
-  }
+
+  // for(let i = 0; i < 10; i++) {
+  //   const indexGen = Math.floor(Math.random() * potentialQ.length)
+  //   const currQ = potentialQ[indexGen]
+  //   testbank.push(currQ)
+  //   potentialQ.splice(indexGen, 1)
+  // }
 
 
   // this is stuffs for quiz page
@@ -94,6 +173,7 @@ function App() {
   const [current, setCurrent] = useState(0)
   const [score, setScore] = useState(50)
   const [endtext, setEndText] = useState("")
+  const [curQ, setCurQ] = useState("")
 
   // let score = []
 
@@ -118,9 +198,9 @@ function App() {
       setScore(score + v)
     } else if (a.checked) {
       pointsGenerator()
-      setScore(score - (pointsGenerator() + 20))
+      setScore(score - (pointsGenerator()))
     } else if (c.checked) {
-      setScore(score + pointsGenerator())
+      setScore(score + pointsGenerator() + 20)
     }
     return score
   }
@@ -134,7 +214,7 @@ function App() {
     }
   }
 
-
+  let q = []
   // to see if each is true
 
   function areWeDoneYet() {
@@ -146,7 +226,7 @@ function App() {
     else {
       setCurrent(current + 1)
       accumulateScore()
-      console.log(score)
+      console.log(score, testbank)
       // score.push(points)
       // console.log(score)
     }
