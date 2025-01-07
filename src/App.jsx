@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import {
-  Link,
   BrowserRouter as 
   Router,
   Routes,
@@ -8,16 +7,29 @@ import {
 } from "react-router-dom";
 import Challenger from './pages/challenger.jsx'
 import Quiz from './pages/quiz.jsx';
-// import Question from "./components/question.jsx";
 import IsItOverHenry from './pages/isitoverhenry.jsx';
-// import RadioButtons from './components/radiobuttons.jsx'
-// import RadioButtons from "./components/radiobuttons.jsx";
 
 
-// import pic1 from "/pics/pic1"
-// import pic2 from "/pics/pic2"
-// import pic3 from "/pics/pic3"
-// import { useNavigate } from "react-router-dom";
+// pic downloads
+// import pic1 from "../pics/pic1.jpg"
+// import pic2 from "../pics/pic2.jpg"
+// import pic3 from "../pics/pic3.jpg"
+// import pic4 from "../pics/pic4.jpg"
+// import pic5 from "../pics/pic5.jpg"
+// import pic6 from "../pics/pic6.jpg"
+// import pic7 from "../pics/pic7.jpg"
+// import pic8 from "../pics/pic8.jpg"
+// import pic9 from "../pics/pic9.jpg"
+// import pic10 from "../pics/pic10.jpg"
+// import pic11 from "../pics/pic11.jpg"
+// import pic12 from "../pics/pic12.jpg"
+// import pic13 from "../pics/pic13.jpg"
+// import pic14 from "../pics/pic14.jpg"
+// import pic15 from "../pics/pic15.jpg"
+// import pic16 from "../pics/pic16.jpg"
+// import pic17 from "../pics/pic17.jpg"
+// import pic18 from "../pics/pic18.jpg"
+
 
 function App() {
 
@@ -51,14 +63,14 @@ function App() {
     "It's them gat dang kids again",
     "Your mother.",
     "Tomato is actually pronounced 'tomato'",
-    "If you find a money on the ground and there's no one around its fair game",
+    "If you find a money on the ground and there's no one around you should immediately mail it to the government",
     "Throwing bread at solar salesmen like they are hungry hungry geese",
     "I get along well with others",
     "Banana bread bro?",
     "Drunk cigs dont count",
     "I have never told a lie ever",
     "Ugly people deserve less than non ugly people",
-    "Pineapple on pizza is okay",
+    "Pepperoni on pizza is wrong",
     "Ketchup is spicy",
     "I like to dance",
     "I would hold the homie's hand",
@@ -66,114 +78,57 @@ function App() {
     "Dogs",
     "Birds are not a real pet",
     "Feet are gross"
-
-    // pic1,
-    // pic2,
-    // pic3,
   ]
-  // let testbank = [];
 
-  function shuffleArray(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [array[i], array[j]] = [array[j], array[i]];
-    }
-  }
-
-
-
-  // this gens a new test but only shows the first question??? also array length doesn't appear to be correct; just shuffles :/
-
-  // function testGen() {
-  //   let i = 0
-  //   while(i < 10) {
-  //     const indexGen = Math.floor(Math.random() * potentialQ.length)
-  //     const currQ = potentialQ[indexGen]
-  //     testbank.push(currQ)
-  //     potentialQ.splice(indexGen, 1)
-  //     i+=1
-  //   }
-  // }
-
-  //randomized numarr but there are repeats (bad)
-  // const numArr = Array.from({length: 10}, () => Math.floor(Math.random() * potentialQ.length))
-
-  //
-    // array of [...potneitalQ.length]
-  // hack away numbers until it is the desired size
-  // populate testbank with indexes given in numArr
-  // UPDATE: not working out now but maybe come back to this if I'm still struggle bussing it
-
-//   const numArr = Array.from({length: potentialQ.length}, (_, i) => i + 1)
-
-//   const shrinker = (ar) => {
-//   while(ar > 10) {
-//     let randIndex = Math.floor(Math.random() * ar.length)
-//     ar.splice(randIndex, 1)
-//   }
-// }
-// shrinker(numArr)
-
-
-// newTest() correctly makes a new randomized array but after q3 the array disappears?
-// shows no more questions
-// also it's for some reason called twice?
-
-// function newTest() {
-//    for(let i = 0; i < 10; i++) {
-//     const indexGen = Math.floor(Math.random() * potentialQ.length)
-//     const currQ = potentialQ[indexGen]
-//     testbank.push(currQ)
-//     potentialQ.splice(indexGen, 1)
-//   }
-//   return testbank
-// }
-
-  //  for(let i = 0; i < 10; i++) {
-  //   const indexGen = Math.floor(Math.random() * potentialQ.length)
-  //   const currQ = potentialQ[indexGen]
-  //   testbank.push(currQ)
-  //   potentialQ.splice(indexGen, 1)
-  // }
-
-  
-
-  function start() {
-    if(formData.name.length < 3) {
-      alert('Name must be at least 3 characters!! >:(')
-      setLoc("/challenger")
-    }
-    else {
-      console.log(testbank)
-      shuffleArray(testbank)
-      setLoc("/quiz")
-    }
-  }
-
-  // this is for selecting the questions
-
-
-
-  // function addQ() {
-  //   testbank.push(currQ)
-  //   potentialQ.slice(indexGen, 1)
-  // }
-
-  // for(let i = 0; i < 10; i++) {
-  //   const indexGen = Math.floor(Math.random() * potentialQ.length)
-  //   const currQ = potentialQ[indexGen]
-  //   testbank.push(currQ)
-  //   potentialQ.splice(indexGen, 1)
-  // }
-
+  // let picbank = [
+  //   pic1,
+  //   pic2,
+  //   pic3,
+  //   pic4,
+  //   pic5,
+  //   pic6,
+  //   pic7,
+  //   pic8,
+  //   pic9,
+  //   pic10,
+  //   pic11,
+  //   pic12,
+  //   pic13,
+  //   pic14,
+  //   pic15,
+  //   pic16,
+  //   pic17,
+  //   pic18
+  // ]
+  let pics = [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18
+  ]
 
   // this is stuffs for quiz page
   const [curtext, setCurText] = useState("Next Question")
   const [page, setPage] = useState("/quiz")
-  const [current, setCurrent] = useState(0)
+  const [place, setPlace] = useState(0)
   const [score, setScore] = useState(50)
   const [endtext, setEndText] = useState("")
   const [curQ, setCurQ] = useState("")
+  const [alreadyAsked, setAlreadyAsked] = useState([])
 
   // let score = []
 
@@ -193,7 +148,7 @@ function App() {
   let b = document.getElementById('option2')
   let c = document.getElementById('option3')
   const accumulateScore = () => {
-    if(current === 0 || b.checked) {
+    if(place === 0 || b.checked) {
       let v = plusOrMinus() * pointsGenerator()
       setScore(score + v)
     } else if (a.checked) {
@@ -214,19 +169,51 @@ function App() {
     }
   }
 
-  let q = []
-  // to see if each is true
+  // unique question gatherer
+
+  function reshufflingTheDeck() {
+      alreadyAsked.splice(0, (alreadyAsked.length - place))
+      setAlreadyAsked(alreadyAsked)
+  }
+
+  function uniqueQ() {
+    if(alreadyAsked.length === testbank.length) {
+      reshufflingTheDeck()
+    }
+    
+    let selected = testbank[Math.floor(Math.random() * testbank.length)]
+    
+    if(!alreadyAsked.includes(selected)) {
+      alreadyAsked.push(selected)
+      setAlreadyAsked(alreadyAsked)
+      setCurQ(selected)
+    } else {
+      uniqueQ()
+    }
+  }
+
+  function start() {
+    if(formData.name.length < 3) {
+      alert('Name must be at least 3 characters!! >:(')
+      setLoc("/challenger")
+    }
+    else {
+      setLoc("/quiz")
+      uniqueQ()
+    }
+  }
 
   function areWeDoneYet() {
-    if(current === (testbank.length - 1)) {
+    if(place === 9) {
       setCurText("See Results")
       setPage("/results")
       settingTheEndText()
     }
     else {
-      setCurrent(current + 1)
+      setPlace(place + 1)
       accumulateScore()
-      console.log(score, testbank)
+      uniqueQ()
+      console.log(score, alreadyAsked)
       // score.push(points)
       // console.log(score)
     }
@@ -237,8 +224,9 @@ function App() {
   function restart() {
     setCurText("Next Question")
     setPage("/quiz")
-    setCurrent(0)
+    setPlace(0)
     setScore(50)
+    setAlreadyAsked([])
     start()
   }
 
@@ -247,7 +235,7 @@ function App() {
     <Router>
       <Routes>
         <Route exact path="/challenger" element={<Challenger onSubmit={addNew} onChange={formDataHandler} formData={formData} location={loc} onClick={start}/>}/>
-        <Route exact path="/quiz" element={<Quiz q={testbank} start={current} btntext={curtext} onClick={areWeDoneYet} location={page}/>}/>
+        <Route exact path="/quiz" element={<Quiz q={curQ} start={place} btntext={curtext} onClick={areWeDoneYet} location={page}/>}/>
         <Route exact path="/results" element={<IsItOverHenry enteredName={formData.name} agt={endtext} onClick={restart}/>}/>
       </Routes>
     </Router>
