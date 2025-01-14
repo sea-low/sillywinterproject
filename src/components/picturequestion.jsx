@@ -1,6 +1,11 @@
-function PictureQuestion ({pic}) {
+function PictureQuestion ({pic, qnum}) {
     return (
-        <div><img src={`../pics/pic${pic}.jpg`}/></div>
+      <>
+        <h1>Question {qnum}</h1>
+        <div>
+          {pic}
+        </div>
+      </>
     )
   }
   export default PictureQuestion;
